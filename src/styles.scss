@@ -1,0 +1,27 @@
+:root {
+  --primary: #EC7000;
+  --secondary: #231D19;
+  --padding: 15px;
+  --cinza : #405040;
+  --cinza-claro: #dedede;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+* {
+  font-family: "Myriad Pro", Arial, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  padding: 30px;
+  margin: 0 auto;
+}

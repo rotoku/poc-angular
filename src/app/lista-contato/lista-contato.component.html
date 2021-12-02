@@ -1,0 +1,25 @@
+<section class="container">
+  <h2 class="titulo">Lista contatos</h2>
+  <table class="tabela">
+    <thead class="tabela__cabecalho">
+      <th class="tabela__cabecalho__conteudo">Nome</th>
+      <th class="tabela__cabecalho__conteudo">Telefone</th>
+      <th class="tabela__cabecalho__conteudo">Data Nascimento</th>
+      <th class="tabela__cabecalho__conteudo">Ação</th>
+    </thead>
+    <tbody *ngIf="!!contatos; else listaVazia">
+      <tr class="tabela__linha" *ngFor="let contato of contatos">
+        <td class="tabela__conteudo">{{contato.nome}}</td>
+        <td class="tabela__conteudo">{{contato.telefone}}</td>
+        <td class="tabela__conteudo">{{contato.data_nascimento | date: "short"}}</td>
+        <td class="tabela__conteudo">
+          <button class="btn btn-danger" (click)="excluir(contato)"> Excluir</button>
+          <button class="btn btn-danger" (click)="atualizar(contato)" style="margin-left: 20px;"> Atualizar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #listaVazia>
+    <td class="tabela__conteudo" colspan="4">Nenhum contato criado!</td>
+  </ng-template>
+</section>
